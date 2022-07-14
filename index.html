@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="maker">
+        <span id="maker"></span>
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Service</a>
+        <a href="">Custom</a>
+        <a href="">Portfolio</a>
+    </div>
+    <script>
+        let maker = document.querySelector('#maker');
+        let item = document.querySelectorAll('.maker a');
+
+        function indicator(e){
+            maker.style.top = e.offsetTop+'px'
+            maker.style.width = e.offsetWidth+'px'
+            maker.innerText = ''
+        }
+        item.forEach(link =>{
+            link.addEventListener('mouseenter',(e) =>{
+                maker.style.opacity = 1;
+                indicator(e.target);
+            })
+        })
+    </script>
+</body>
+</html>
